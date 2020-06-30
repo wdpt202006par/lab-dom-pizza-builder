@@ -107,6 +107,11 @@ function renderButtons() {
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+// si le bouton pepperoni est actif on rajoute l'ingrédient dans le panel 
+//var price = document.querySelector('.panel.price ul');
+
+
+
 }
 
 renderEverything();
