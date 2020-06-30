@@ -101,6 +101,14 @@ function renderButtons() {
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+  const ul = document.querySelector('aside ul');
+  ul.innerHTML = '';
+
+  for (let status in state) {
+    if (state[status] === true) {
+      ul.appendChild('li');
+    }
+  }
 }
 
 renderEverything();
