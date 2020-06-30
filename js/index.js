@@ -125,6 +125,23 @@ if (state.glutenFreeCrust) {
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+  document.querySelector('.panel price ol').remove
+  
+  if (state.pepperoni) {
+  document.querySelector('.panel price ol').createElement('li').innerHTML = `${ingredients.pepperoni.price} ${ingredients.pepperoni.name}`;
+	basePrice += ingredients.pepperoni.price;
+} if (state.mushrooms) {
+  basePrice += ingredients.mushrooms.price;
+} if (state.greenPeppers) {
+  basePrice += ingredients.greenPeppers.price;
+} if (state.whiteSauce) {
+  basePrice += ingredients.whiteSauce.price;
+} if (state.glutenFreeCrust) {
+  basePrice += ingredients.glutenFreeCrust.price;
+}
+
+document.querySelector('.panel price strong').innerHTML = `${basePrice}`;
+
 }
 
 renderEverything();
