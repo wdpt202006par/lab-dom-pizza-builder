@@ -45,7 +45,8 @@ function renderPepperoni() {
 function renderMushrooms() {
   // Iteration 1: set the visibility of `<section class="mushroom">`
   document.querySelectorAll(".mushroom").forEach((oneMushroom) => {
-    if (state.mushroom) {
+    if (state.mushrooms) {
+      console.log("y a les champis")
       oneMushroom.style.visibility = "visible";
     } else {
       oneMushroom.style.visibility = "hidden";
@@ -113,7 +114,7 @@ document.querySelector(".btn.btn-pepperoni").addEventListener("click", () => {
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
 document.querySelector(".btn.btn-mushrooms").addEventListener("click", () => {
-  state.mushroom = !state.mushroom;
+  state.mushrooms = !state.mushrooms;
   renderEverything();
 });
 
