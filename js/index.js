@@ -46,7 +46,6 @@ function renderMushrooms() {
   // Iteration 1: set the visibility of `<section class="mushroom">`
   document.querySelectorAll(".mushroom").forEach((oneMushroom) => {
     if (state.mushrooms) {
-      console.log("y a les champis")
       oneMushroom.style.visibility = "visible";
     } else {
       oneMushroom.style.visibility = "hidden";
@@ -89,10 +88,8 @@ function renderButtons() {
   // Iteration 3: add/remove the class "active" of each `<button class="btn">`
  let buttons = document.querySelectorAll('.btn').forEach((element)=> {
  element.onclick = function() {
-   console.log(element);
   if (element.classList.contains('active')) {
     element.classList.remove('active');
-    console.log(element);
   }else{
     element.classList.add('active');
   }
@@ -102,6 +99,42 @@ function renderButtons() {
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+  let li = document.querySelectorAll('.price ul li')[0];
+  if (state.pepperoni) {
+    li.style.visibility = "visible";
+  } else {
+    li.style.visibility = 'hidden';
+  }
+
+  li = document.querySelectorAll('.price ul li')[1];
+  if (state.mushrooms) {
+    li.style.visibility = "visible";
+  } else {
+    li.style.visibility = 'hidden';
+  }
+
+  li = document.querySelectorAll('.price ul li')[2];
+  if (state.greenPeppers) {
+    li.style.visibility = "visible";
+  } else {
+    li.style.visibility = 'hidden';
+  }
+
+  li = document.querySelectorAll('.price ul li')[3];
+  if (state.whiteSauce) {
+    li.style.visibility = "visible";
+  } else {
+    li.style.visibility = 'hidden';
+  }
+
+  li = document.querySelectorAll('.price ul li')[4];
+  if (state.glutenFreeCrust) {
+    console.log(li)
+    li.style.visibility = "visible";
+  } else {
+    li.style.visibility = 'hidden';
+  }
+
 }
 
 renderEverything();
