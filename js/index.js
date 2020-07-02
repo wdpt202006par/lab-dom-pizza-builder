@@ -100,40 +100,56 @@ function renderButtons() {
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
   let li = document.querySelectorAll(".price ul li")[0];
+  let pepPrice = 0;
   if (state.pepperoni) {
     li.style.visibility = "visible";
+    pepPrice = Number(li.innerHTML[1]); //pour prise en compte dans total
   } else {
     li.style.visibility = "hidden";
+    //sinon prix = 0
   }
 
   li = document.querySelectorAll(".price ul li")[1];
+  let mushroomPrice = 0;
   if (state.mushrooms) {
     li.style.visibility = "visible";
+    mushroomPrice = Number(li.innerHTML[1]);
   } else {
     li.style.visibility = "hidden";
   }
 
   li = document.querySelectorAll(".price ul li")[2];
+  let greenPepPrice = 0;
+
   if (state.greenPeppers) {
     li.style.visibility = "visible";
+    greenPepPrice = Number(li.innerHTML[1]);
   } else {
     li.style.visibility = "hidden";
   }
 
   li = document.querySelectorAll(".price ul li")[3];
+  let whiteSaucePrice = 0;
   if (state.whiteSauce) {
     li.style.visibility = "visible";
+    whiteSaucePrice = Number(li.innerHTML[1]);
   } else {
     li.style.visibility = "hidden";
   }
 
   li = document.querySelectorAll(".price ul li")[4];
+  let CrustPrice = 0;
   if (state.glutenFreeCrust) {
     console.log(li);
     li.style.visibility = "visible";
+    CrustPrice = Number(li.innerHTML[1]);
   } else {
     li.style.visibility = "hidden";
   }
+  //total price calculation
+  let price = document.querySelector("strong");
+  let totalPrice = 10 + pepPrice + mushroomPrice + greenPepPrice + whiteSaucePrice + CrustPrice;
+  price.innerHTML = `$ ${totalPrice}`;
 }
 
 renderEverything();
@@ -159,11 +175,11 @@ document.querySelector(".btn.btn-green-peppers").addEventListener("click", () =>
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
 document.querySelector(".btn.btn-sauce").addEventListener("click", () => {
   state.whiteSauce = !state.whiteSauce; // changer le bouton
-  renderWhiteSauce();
+  renderEverything(); //pas renderWhiteSauce
 });
 
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
 document.querySelector(".btn.btn-crust").addEventListener("click", () => {
   state.glutenFreeCrust = !state.glutenFreeCrust; // changer le bouton
-  renderGlutenFreeCrust();
+  renderEverything(); //pas renderglutenFreeCrust
 });
