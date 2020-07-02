@@ -86,55 +86,54 @@ function renderGlutenFreeCrust() {
 
 function renderButtons() {
   // Iteration 3: add/remove the class "active" of each `<button class="btn">`
- let buttons = document.querySelectorAll('.btn').forEach((element)=> {
- element.onclick = function() {
-  if (element.classList.contains('active')) {
-    element.classList.remove('active');
-  }else{
-    element.classList.add('active');
-  }
- }
- });
+  let buttons = document.querySelectorAll(".btn").forEach((element) => {
+    element.onclick = function () {
+      if (element.classList.contains("active")) {
+        element.classList.remove("active");
+      } else {
+        element.classList.add("active");
+      }
+    };
+  });
 }
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
-  let li = document.querySelectorAll('.price ul li')[0];
+  let li = document.querySelectorAll(".price ul li")[0];
   if (state.pepperoni) {
     li.style.visibility = "visible";
   } else {
-    li.style.visibility = 'hidden';
+    li.style.visibility = "hidden";
   }
 
-  li = document.querySelectorAll('.price ul li')[1];
+  li = document.querySelectorAll(".price ul li")[1];
   if (state.mushrooms) {
     li.style.visibility = "visible";
   } else {
-    li.style.visibility = 'hidden';
+    li.style.visibility = "hidden";
   }
 
-  li = document.querySelectorAll('.price ul li')[2];
+  li = document.querySelectorAll(".price ul li")[2];
   if (state.greenPeppers) {
     li.style.visibility = "visible";
   } else {
-    li.style.visibility = 'hidden';
+    li.style.visibility = "hidden";
   }
 
-  li = document.querySelectorAll('.price ul li')[3];
+  li = document.querySelectorAll(".price ul li")[3];
   if (state.whiteSauce) {
     li.style.visibility = "visible";
   } else {
-    li.style.visibility = 'hidden';
+    li.style.visibility = "hidden";
   }
 
-  li = document.querySelectorAll('.price ul li')[4];
+  li = document.querySelectorAll(".price ul li")[4];
   if (state.glutenFreeCrust) {
-    console.log(li)
+    console.log(li);
     li.style.visibility = "visible";
   } else {
-    li.style.visibility = 'hidden';
+    li.style.visibility = "hidden";
   }
-
 }
 
 renderEverything();
